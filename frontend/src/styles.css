@@ -1,0 +1,53 @@
+:root { font-family: system-ui, sans-serif; color: #1c2430; background: #f4f6f9; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { min-height: 100vh; }
+.topbar { display: flex; gap: 1rem; align-items: center; padding: .6rem 1rem; background: #12355b; color: #fff; flex-wrap: wrap; }
+.topbar nav { display: flex; gap: .75rem; flex-wrap: wrap; }
+.topbar a { color: #cfe1f5; text-decoration: none; padding: .3rem .5rem; border-radius: 4px; }
+.topbar a.active { background: #1f4f85; color: #fff; }
+/* Form controls inside the dark bar: the global control rule (white background, inherited text colour)
+   would render the inherited white text on white, so they get their own dark-bar palette. */
+.topbar select, .topbar button { background: #1f4f85; color: #fff; border-color: #8fb3dc; }
+.topbar select:hover, .topbar button:hover:not(:disabled) { background: #2a62a3; }
+.topbar select:focus-visible, .topbar button:focus-visible, .topbar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* The opened option list is drawn by the browser on a light surface, so keep dark text there. */
+.topbar select option { background: #fff; color: #1c2430; }
+.spacer { flex: 1; }
+.content { max-width: 1180px; margin: 0 auto; padding: 1rem; }
+.row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin: .5rem 0; }
+.card { background: #fff; border-radius: 8px; padding: 1rem; margin: 1rem 0; box-shadow: 0 1px 3px #0002; display: flex; flex-direction: column; gap: .5rem; }
+.login { max-width: 380px; margin: 4rem auto; }
+label { display: flex; flex-direction: column; gap: .2rem; font-size: .9rem; }
+input, select, textarea, button, .button { font: inherit; padding: .5rem .7rem; border: 1px solid #b6c0cc; border-radius: 6px; background: #fff; color: inherit; text-decoration: none; cursor: pointer; }
+button.primary, .button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+table { width: 100%; border-collapse: collapse; background: #fff; margin-bottom: 1rem; }
+th, td { text-align: left; padding: .5rem; border-bottom: 1px solid #e3e8ee; vertical-align: top; }
+tr.warn { background: #fff4e0; }
+tr.total td { font-weight: 600; background: #f0f4f8; }
+.badge { display: inline-block; padding: .1rem .5rem; border-radius: 99px; font-size: .75rem; margin-left: .4rem; background: #e3e8ee; }
+.badge.ok { background: #d5f2dd; } .badge.warn { background: #ffe0a8; } .badge.off { background: #e6e6e6; } .badge.info { background: #d6e6ff; }
+.error { color: #a40e26; background: #fde8ec; padding: .5rem; border-radius: 6px; }
+.notice { background: #eaf3ff; padding: .75rem; border-radius: 6px; }
+.muted { color: #566474; }
+.topbar .muted { color: #cfe1f5; }
+.big { font-size: 1.2rem; }
+.sr-only { position: absolute; left: -9999px; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.summary-grid > div { background: #fff; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 3px #0002; display: flex; flex-direction: column; gap: .25rem; }
+.summary-grid strong { font-size: 1.8rem; }
+.kiosk { max-width: 860px; min-height: 100vh; margin: 0 auto; padding: 1rem; }
+.kiosk-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.kiosk button, .kiosk input { min-height: 48px; font-size: 1.05rem; }
+.kiosk-actions { justify-content: center; }
+.result { min-height: 180px; padding: 2rem 1rem; text-align: center; font-size: 1.5rem; border-radius: 12px; background: #e3e8ee; margin: 1rem 0; display: flex; flex-direction: column; justify-content: center; gap: .5rem; }
+.result.in { background: #bfe9c8; } .result.out { background: #bcd6f7; } .result.bad { background: #f6c3cb; } .result.pending { background: #ffe9a8; }
+.warning-text { color: #7b3d00; font-size: 1rem; }
+.scanner-status { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+.manual-entry { display: flex; gap: .75rem; align-items: flex-end; }
+.manual-entry label { flex: 1; }
+.video { width: 100%; border-radius: 8px; background: #000; margin-top: 1rem; }
+.print-only { display: none; }
+@media (max-width: 720px) { .summary-grid { grid-template-columns: 1fr; } .topbar nav { width: 100%; } table { display: block; overflow-x: auto; } }
+@media print { .no-print, .topbar { display: none !important; } .print-only { display: block; } .content { max-width: none; padding: 0; } }

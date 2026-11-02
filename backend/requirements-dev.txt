@@ -1,0 +1,6 @@
+# Test-only dependencies (install on top of requirements.txt).
+-r requirements.txt
+pytest
+httpx
+# QR round-trip decoding of generated PNG/PDF credentials in tests (not used at runtime).
+zxing-cpp

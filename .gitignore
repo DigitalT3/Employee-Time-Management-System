@@ -1,0 +1,16 @@
+# Repository-local PostgreSQL cluster (DEC-01) - never commit
+.localdb/
+# Python
+backend/.venv/
+backend/.venv*/
+backend/.env
+__pycache__/
+*.pyc
+.pytest_cache/
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+# Logs
+logs/
